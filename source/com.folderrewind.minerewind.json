@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "pluginId": "com.folderrewind.minerewind",
+  "version": "1.9.0",
+  "channel": "candidate",
+  "pluginApi": { "major": 3, "minor": 0 },
+  "architectures": ["any"],
+  "artifact": {
+    "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/v1.9.0/MineRewind-1.9.0.frplugin",
+    "sha256": "b0ed525bcf49dc22a7ee0ee04c07eda6242fe4efa52368758fc9ac406fc76b63"
+  },
+  "provenance": "officialCatalog",
+  "trustClassification": "official",
+  "requestedHostServices": ["backupRequest", "restoreRequest", "knotLink", "temporaryStorage", "logging"],
+  "artifactFormats": [],
+  "artifactTransformers": [],
+  "restoreStrategies": [],
+  "futureSignature": null
+}

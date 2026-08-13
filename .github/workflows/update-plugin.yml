@@ -1,0 +1,44 @@
+name: Update plugin entry
+
+on:
+  workflow_dispatch:
+    inputs:
+      pluginId: { required: true, type: string }
+      version: { required: true, type: string }
+      artifactUrl: { required: true, type: string }
+      sha256: { required: true, type: string }
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update immutable release facts
+        env:
+          PLUGIN_ID: ${{ inputs.pluginId }}
+          VERSION: ${{ inputs.version }}
+          ARTIFACT_URL: ${{ inputs.artifactUrl }}
+          SHA256: ${{ inputs.sha256 }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          path = pathlib.Path('source') / f"{os.environ['PLUGIN_ID']}.json"
+          value = json.loads(path.read_text(encoding='utf-8'))
+          value['version'] = os.environ['VERSION'].removeprefix('v')
+          value['channel'] = 'stable'
+          value['artifact'] = {'url': os.environ['ARTIFACT_URL'], 'sha256': os.environ['SHA256']}
+          path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: "10.0.x" }
+      - run: dotnet run --project tools/Catalog.Build -- --source source --output public/catalog.v1.json
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: catalog/${{ inputs.pluginId }}-${{ inputs.version }}
+          title: "catalog: ${{ inputs.pluginId }} ${{ inputs.version }}"
+          commit-message: "catalog: update ${{ inputs.pluginId }} to ${{ inputs.version }}"
+          body: "Generated from an immutable release URL; CI re-downloads and verifies SHA-256 and Manifest facts."

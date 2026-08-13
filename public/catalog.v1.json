@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "schemaVersion": 1,
+      "pluginId": "com.folderrewind.minerewind",
+      "version": "1.9.0",
+      "channel": "candidate",
+      "pluginApi": {
+        "major": 3,
+        "minor": 0
+      },
+      "architectures": [
+        "any"
+      ],
+      "artifact": {
+        "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/v1.9.0/MineRewind-1.9.0.frplugin",
+        "sha256": "b0ed525bcf49dc22a7ee0ee04c07eda6242fe4efa52368758fc9ac406fc76b63"
+      },
+      "provenance": "officialCatalog",
+      "trustClassification": "official",
+      "requestedHostServices": [
+        "backupRequest",
+        "restoreRequest",
+        "knotLink",
+        "temporaryStorage",
+        "logging"
+      ],
+      "artifactFormats": [],
+      "artifactTransformers": [],
+      "restoreStrategies": [],
+      "futureSignature": null
+    }
+  ],
+  "presets": [
+    {
+      "schemaVersion": 1,
+      "presetId": "minecraft-enhanced-experience",
+      "name": "Minecraft Enhanced Experience",
+      "actions": [
+        {
+          "id": "install-minerewind",
+          "type": "installPlugin",
+          "pluginId": "com.folderrewind.minerewind",
+          "channel": "candidate"
+        },
+        {
+          "id": "enable-minerewind",
+          "type": "enablePlugin",
+          "pluginId": "com.folderrewind.minerewind"
+        },
+        {
+          "id": "enable-knotlink-host",
+          "type": "setHostFeature",
+          "feature": "knotLink",
+          "enabled": true
+        },
+        {
+          "id": "knotlink-installer-awaits-curation",
+          "type": "notice",
+          "severity": "warning",
+          "message": "External installer requires an immutable official URL and SHA-256 before execution."
+        },
+        {
+          "id": "mine-backup-reminder",
+          "type": "notice",
+          "severity": "information",
+          "message": "Install a compatible in-game integration for hot consistency; raw full backup remains available with warnings."
+        }
+      ]
+    }
+  ]
+}
