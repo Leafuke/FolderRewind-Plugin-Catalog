@@ -7,5 +7,5 @@ The catalog records provenance and curation status but is not a process sandbox 
 Local candidate verification:
 
 ```powershell
-dotnet run --project tools/Catalog.Build -- --source source --output public/catalog.v1.json --package com.folderrewind.minerewind=../../FolderRewind-Plugin-Minecraft/artifacts/MineRewind-1.9.0.frplugin
+dotnet run --project tools/Catalog.Build -- --source source --output public/catalog.v1.json --package com.folderrewind.minerewind=../../FolderRewind-Plugin-Minecraft/artifacts/MineRewind-1.9.1.frplugin
 ```
