@@ -1,17 +1,30 @@
 {
   "schemaVersion": 1,
   "pluginId": "com.folderrewind.minerewind",
-  "version": "1.9.0",
-  "channel": "candidate",
-  "pluginApi": { "major": 3, "minor": 0 },
-  "architectures": ["any"],
+  "version": "1.9.5",
+  "channel": "stable",
+  "pluginApi": {
+    "major": 3,
+    "minor": 6
+  },
+  "architectures": [
+    "any"
+  ],
   "artifact": {
-    "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/v1.9.0/MineRewind-1.9.0.frplugin",
-    "sha256": "b0ed525bcf49dc22a7ee0ee04c07eda6242fe4efa52368758fc9ac406fc76b63"
+    "sha256": "3b571fd7f09d1b88375832a4c072e979d911a1f59400c144144dc924c7a5e1d9",
+    "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/v1.9.5/MineRewind-1.9.5.frplugin"
   },
   "provenance": "officialCatalog",
   "trustClassification": "official",
-  "requestedHostServices": ["backupRequest", "restoreRequest", "knotLink", "temporaryStorage", "logging"],
+  "requestedHostServices": [
+    "configQuery",
+    "backupRequest",
+    "restoreRequest",
+    "historyQuery",
+    "knotLink",
+    "temporaryStorage",
+    "logging"
+  ],
   "artifactFormats": [],
   "artifactTransformers": [],
   "restoreStrategies": [],
