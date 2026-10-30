@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "pluginId": "com.folderrewind.minerewind",
-  "version": "1.9.5",
+  "version": "1.10.0",
   "channel": "stable",
   "pluginApi": {
     "major": 3,
-    "minor": 6
+    "minor": 17
   },
   "architectures": [
     "any"
   ],
   "artifact": {
-    "sha256": "3b571fd7f09d1b88375832a4c072e979d911a1f59400c144144dc924c7a5e1d9",
-    "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/v1.9.5/MineRewind-1.9.5.frplugin"
+    "sha256": "57795c25ea71a460f686419983d91a2f5f45eb7a48e31eab40261a8198d6df0d",
+    "url": "https://github.com/Leafuke/FolderRewind-Plugin-Minecraft/releases/download/1.10.0/MineRewind-1.10.0.frplugin"
   },
   "provenance": "officialCatalog",
   "trustClassification": "official",
@@ -23,10 +23,20 @@
     "historyQuery",
     "knotLink",
     "temporaryStorage",
-    "logging"
+    "logging",
+    "artifactRead",
+    "artifactTransformStaging",
+    "restoreMaterializationWorkspace"
   ],
-  "artifactFormats": [],
-  "artifactTransformers": [],
-  "restoreStrategies": [],
+  "artifactFormats": [
+    "minecraft-world-full",
+    "minecraft-world-incremental"
+  ],
+  "artifactTransformers": [
+    "minecraft-world-full"
+  ],
+  "restoreStrategies": [
+    "minecraft-world-materializer"
+  ],
   "futureSignature": null
 }
