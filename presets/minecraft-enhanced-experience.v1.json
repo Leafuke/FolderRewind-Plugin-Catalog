@@ -3,7 +3,7 @@
   "presetId": "minecraft-enhanced-experience",
   "name": "Minecraft Enhanced Experience",
   "actions": [
-    { "id": "install-minerewind", "type": "installPlugin", "pluginId": "com.folderrewind.minerewind", "channel": "candidate" },
+    { "id": "install-minerewind", "type": "installPlugin", "pluginId": "com.folderrewind.minerewind", "channel": "stable" },
     { "id": "enable-minerewind", "type": "enablePlugin", "pluginId": "com.folderrewind.minerewind" },
     { "id": "enable-knotlink-host", "type": "setHostFeature", "feature": "knotLink", "enabled": true },
     { "id": "knotlink-installer-awaits-curation", "type": "notice", "severity": "warning", "message": "External installer requires an immutable official URL and SHA-256 before execution." },
